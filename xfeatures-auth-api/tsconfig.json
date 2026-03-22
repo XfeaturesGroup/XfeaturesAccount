@@ -5,7 +5,7 @@
 		"moduleResolution": "Bundler",
 		"lib": ["ESNext"],
 		"types": [
-			"@cloudflare/workers-types/2026-03-01",
+			"@cloudflare/workers-types",
 			"@cloudflare/vitest-pool-workers"
 		],
 		"paths": {
@@ -17,7 +17,9 @@
 	},
 	"include": [
 		"src/**/*.ts",
-		"src/**/*.test.ts"
+		"tests/**/*.ts",
+		"vitest.config.ts",
+		"worker-configuration.d.ts"
 	],
 	"exclude": ["node_modules"]
 }

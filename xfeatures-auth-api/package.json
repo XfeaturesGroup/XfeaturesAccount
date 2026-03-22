@@ -2,6 +2,7 @@
 	"name": "xfeatures-auth-api",
 	"version": "0.0.0",
 	"private": true,
+	"type": "module",
 	"scripts": {
 		"deploy": "wrangler deploy",
 		"dev": "wrangler dev",
@@ -11,6 +12,7 @@
 	},
 	"devDependencies": {
 		"@cloudflare/vitest-pool-workers": "^0.13.3",
+		"@cloudflare/workers-types": "^4.20260317.1",
 		"@types/node": "^25.3.5",
 		"typescript": "^5.5.2",
 		"vitest": "^4.1.0",
