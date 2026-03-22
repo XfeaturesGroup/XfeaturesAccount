@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="bd7f69b2039573a0564ed2d0f3a1b03647daf3ed734f047d329fd1353f4451fa" uuid="d55e3561-0a1d-4095-b3fd-663096ec6131">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/xfeatures-auth-api/.wrangler/state/v3/d1/miniflare-D1DatabaseObject/bd7f69b2039573a0564ed2d0f3a1b03647daf3ed734f047d329fd1353f4451fa.sqlite</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+  </component>
+</project>

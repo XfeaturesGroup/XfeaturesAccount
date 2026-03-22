@@ -1,0 +1,19 @@
+name = "xfeatures-auth-api"
+main = "src/index.ts"
+compatibility_date = "2026-03-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "xfeatures-account"
+database_id = "9fd7a63b-4d88-4ff8-ab72-7265b35e0589"
+migrations_dir = "migrations"
+
+[[r2_buckets]]
+binding = "AVATARS_BUCKET"
+bucket_name = "xfeatures-avatars"
+
+[vars]
+ENVIRONMENT = "production"
+FRONTEND_URL = "https://account.xfeatures.net"
+GITHUB_CLIENT_ID = "Ov23liY8GBtUuWP6dSTB"
+DISCORD_CLIENT_ID = "1220122692590633072"
