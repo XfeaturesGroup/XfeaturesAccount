@@ -1,0 +1,19 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/xfeatures-auth-api"
+    schedule:
+      interval: "weekly"
+    groups:
+      api-dependencies:
+        patterns:
+          - "*"
+
+  - package-ecosystem: "npm"
+    directory: "/xfeatures-account-web"
+    schedule:
+      interval: "weekly"
+    groups:
+      web-dependencies:
+        patterns:
+          - "*"

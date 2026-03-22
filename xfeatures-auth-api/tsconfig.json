@@ -1,13 +1,23 @@
 {
 	"compilerOptions": {
-		"target": "ES2022",
-		"module": "ES2022",
+		"target": "ESNext",
+		"module": "ESNext",
 		"moduleResolution": "Bundler",
-		"lib": ["ES2022"],
-		"types": ["@cloudflare/workers-types"],
+		"lib": ["ESNext"],
+		"types": [
+			"@cloudflare/workers-types/2026-03-01",
+			"@cloudflare/vitest-pool-workers"
+		],
+		"paths": {
+			"@/*": ["./src/*"]
+		},
 		"strict": true,
-		"resolveJsonModule": true,
-		"allowJs": true,
-		"checkJs": false
-	}
+		"skipLibCheck": true,
+		"isolatedModules": true
+	},
+	"include": [
+		"src/**/*.ts",
+		"src/**/*.test.ts"
+	],
+	"exclude": ["node_modules"]
 }
