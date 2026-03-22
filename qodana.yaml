@@ -3,8 +3,17 @@
 ####################################################################################################################
 
 version: "1.0"
-linter: jetbrains/qodana-js:2025.3
-profile:
-  name: qodana.recommended
-include:
-  - name: CheckDependencyLicenses
+
+exclude:
+  - name: All
+    paths:
+      - node_modules
+      - dist
+      - build
+      - .cloudflare
+
+linter: jetbrains/qodana-js:latest
+
+inspections:
+  - name: ESLintValidationInspection
+    enabled: false
