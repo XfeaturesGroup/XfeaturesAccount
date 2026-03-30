@@ -19,7 +19,6 @@
 		"wrangler": "^4.76.0"
 	},
 	"dependencies": {
-		"eslint": "^10.1.0",
 		"itty-router": "^5.0.23",
 		"otpauth": "^9.5.0"
 	}
