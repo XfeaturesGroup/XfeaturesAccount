@@ -7,7 +7,7 @@ export const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
     if (isInitializing) {
         return (
             <div className="min-h-screen bg-background flex items-center justify-center font-mono text-blood text-sm animate-pulse">
-                [ ESTABLISHING SECURE CONNECTION... ]
+                ESTABLISHING SECURE CONNECTION...
             </div>
         );
     }

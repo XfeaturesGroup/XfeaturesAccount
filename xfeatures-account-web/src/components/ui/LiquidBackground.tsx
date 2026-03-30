@@ -16,7 +16,7 @@ export const LiquidBackground = () => {
             >
                 <div className="w-full h-full scale-[1.1] pointer-events-none">
                     <Spline
-                        scene="https://prod.spline.design/I88ECTHc2Xon7-LS/scene.splinecode"
+                        scene="https://prod.spline.design/tq4TMDAfvjt1oKQz/scene.splinecode"
                         className="w-full h-full object-cover"
                         style={{ pointerEvents: 'none' }}
                     />
