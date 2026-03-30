@@ -32,6 +32,8 @@ jobs:
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
         with:
+          # Explicitly specify the Docker image to pull (prevents qodana CLI pull errors)
+          image: jetbrains/qodana-js-community:2025.3
           # When pr-mode is set to true, Qodana analyzes only the files that have been changed
           pr-mode: false
           use-caches: true

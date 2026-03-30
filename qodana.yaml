@@ -12,7 +12,7 @@ exclude:
       - build
       - .cloudflare
 
-linter: jetbrains/qodana-js-community:latest
+linter: jetbrains/qodana-js-community:2025.3
 
 inspections:
   - name: ESLintValidationInspection

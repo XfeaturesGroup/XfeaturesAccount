@@ -1,7 +1,13 @@
-import { Suspense } from 'react';
+import { Suspense, useMemo } from 'react';
 import Spline from '@splinetool/react-spline';
 
 export const LiquidBackground = () => {
+    const sceneVersion = import.meta.env.VITE_SPLINE_SCENE_VERSION;
+    const sceneUrl = useMemo(() => {
+        const base = 'https://prod.spline.design/tq4TMDAfvjt1oKQz/scene.splinecode';
+        return sceneVersion ? `${base}?v=${sceneVersion}` : base;
+    }, [sceneVersion]);
+
     return (
         <div className="absolute inset-0 z-0 bg-black overflow-hidden">
 
@@ -16,7 +22,7 @@ export const LiquidBackground = () => {
             >
                 <div className="w-full h-full scale-[1.1] pointer-events-none">
                     <Spline
-                        scene="https://prod.spline.design/tq4TMDAfvjt1oKQz/scene.splinecode"
+                        scene={sceneUrl}
                         className="w-full h-full object-cover"
                         style={{ pointerEvents: 'none' }}
                     />
