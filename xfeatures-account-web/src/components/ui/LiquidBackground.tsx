@@ -4,7 +4,7 @@ import Spline from '@splinetool/react-spline';
 export const LiquidBackground = () => {
     const sceneVersion = import.meta.env.VITE_SPLINE_SCENE_VERSION;
     const sceneUrl = useMemo(() => {
-        const base = 'https://prod.spline.design/tq4TMDAfvjt1oKQz/scene.splinecode';
+        const base = 'https://prod.spline.design/tq4TMDAfvjt1oKQz/scene.splinecode?v=2';
         return sceneVersion ? `${base}?v=${sceneVersion}` : base;
     }, [sceneVersion]);
 
