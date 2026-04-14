@@ -1,5 +1,5 @@
 import { error, json } from 'itty-router';
-import { Env } from '../index';
+import { Env } from '..';
 import { verifyPassword } from '../crypto';
 import * as OTPAuth from 'otpauth';
 import { AuthenticatedRequest } from '../middleware/session';

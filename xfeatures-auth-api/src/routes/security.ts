@@ -1,7 +1,7 @@
 import { error, json, IRequest } from 'itty-router';
-import { Env } from '../index';
-import { AuthenticatedRequest } from '../middleware/session';
-import { hashPassword, verifyPassword, generateSessionToken, hashToken } from '../crypto';
+import { Env } from '..';
+import { AuthenticatedRequest } from '@/middleware/session';
+import { hashPassword, verifyPassword, generateSessionToken, hashToken } from '@/crypto';
 import * as OTPAuth from 'otpauth';
 
 const PASSWORD_REGEX = /^(?=.*[a-zа-яё])(?=.*[A-ZА-ЯЁ])(?=.*\d).{8,}$/;
@@ -87,8 +87,6 @@ export const forgotPasswordHandler = async (request: IRequest, env: Env) => {
 	} catch (e) {
 		console.error('Password reset email failed:', e);
 	}
-
-	return json({ success: true, message: 'If this email exists, a reset link has been sent.'});
 
 	return json({ success: true, message: 'If this email exists, a reset link has been sent.'});
 };

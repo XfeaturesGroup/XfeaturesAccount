@@ -12,7 +12,7 @@ export const useTranslation = () => {
 
         let text: string = dictionary[key] || dictionaries.en[key] || key;
 
-        if (params && typeof text === 'string') {
+        if (params) {
             Object.entries(params).forEach(([k, v]) => {
                 text = text.replace(`{${k}}`, String(v));
             });

@@ -1,5 +1,5 @@
 import { json } from 'itty-router';
-import { Env } from '../index';
+import { Env } from '..';
 import { AuthenticatedRequest } from '../middleware/session';
 
 export const getIntegrationsHandler = async (request: AuthenticatedRequest, env: Env) => {

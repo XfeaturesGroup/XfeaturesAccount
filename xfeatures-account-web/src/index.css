@@ -9,7 +9,6 @@
   --color-fluid-purple: #8A2BE2;
   --color-fluid-magenta: #FF003C;
 
-  --background-image-glass-noise: url('/noise.svg');
   --background-image-glass-border: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 100%);
 
   --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.4), inset 0 1px 1px 0 rgba(255, 255, 255, 0.1), inset 0 -1px 1px 0 rgba(255, 255, 255, 0.05);

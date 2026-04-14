@@ -1,7 +1,5 @@
 import { error, IRequest } from 'itty-router';
 
-const MAX_PAYLOAD_SIZE = 10 * 1024 * 1024;
-
 export const globalSecurityMiddleware = async (request: IRequest) => {
 	if (['POST', 'PUT', 'DELETE', 'PATCH'].includes(request.method)) {
 		let origin = request.headers.get('Origin');

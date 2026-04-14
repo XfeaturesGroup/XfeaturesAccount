@@ -1,5 +1,5 @@
 import { IRequest } from 'itty-router';
-import { Env } from '../index';
+import { Env } from '..';
 import { hashToken } from '../crypto';
 
 const getUserIdFromCookie = async (request: Request, env: Env) => {

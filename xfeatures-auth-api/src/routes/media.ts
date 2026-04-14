@@ -1,5 +1,5 @@
 import { IRequest } from 'itty-router';
-import { Env } from '../index';
+import { Env } from '..';
 
 export const getAvatarHandler = async (request: IRequest, env: Env) => {
     const filename = request.params.filename;

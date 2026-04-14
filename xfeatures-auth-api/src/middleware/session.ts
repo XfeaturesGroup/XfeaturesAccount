@@ -1,5 +1,5 @@
 import { error, IRequest } from 'itty-router';
-import { Env } from '../index';
+import { Env } from '..';
 import { hashToken } from '../crypto';
 
 export type AuthenticatedRequest = IRequest & Request & {
