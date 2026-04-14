@@ -13,6 +13,9 @@ updates:
     directory: "/xfeatures-account-web"
     schedule:
       interval: "weekly"
+    ignore:
+      - dependency-name: "eslint"
+        versions: [ ">= 10.0.0" ]
     groups:
       web-dependencies:
         patterns:
