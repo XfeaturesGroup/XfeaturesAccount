@@ -3,6 +3,7 @@
 ####################################################################################################################
 
 version: "1.0"
+bootstrap: "npm ci --prefix xfeatures-account-web && npm ci --prefix xfeatures-auth-api"
 linter: jetbrains/qodana-js:2025.3
 profile:
   name: qodana.recommended

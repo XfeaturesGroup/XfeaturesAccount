@@ -60,13 +60,13 @@ export const IntegrationsManager = () => {
             setSearchParams(searchParams);
         }
 
-        fetchIntegrations();
+        void fetchIntegrations();
     }, [fetchIntegrations, searchParams, setSearchParams, addLog]);
 
     const toggleStatus = async (id: string, currentStatus: number) => {
         try {
             await api.patch(`/api/user/integrations/${id}/toggle`, { is_active: !currentStatus });
-            fetchIntegrations();
+            await fetchIntegrations();
         } catch {
             addLog('error', 'Failed to update status.');
         }
@@ -76,7 +76,7 @@ export const IntegrationsManager = () => {
         setIsLoading(true);
         try {
             await api.post('/api/user/integrations/toggle-all', { is_active: targetStatus });
-            fetchIntegrations();
+            await fetchIntegrations();
             addLog('success', targetStatus ? 'All integrations enabled.' : 'All integrations disabled.');
         } catch {
             addLog('error', 'Failed to toggle all.');
@@ -88,7 +88,7 @@ export const IntegrationsManager = () => {
         try {
             await api.delete(`/api/user/integrations/${id}`);
             addLog('info', 'Integration disconnected.');
-            fetchIntegrations();
+            await fetchIntegrations();
         } catch {
             addLog('error', 'Failed to disconnect account.');
         }

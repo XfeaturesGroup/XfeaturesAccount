@@ -36,14 +36,14 @@ export const SessionManager = () => {
     }, [addLog]);
 
     useEffect(() => {
-        fetchSessions();
+        void fetchSessions();
     }, [fetchSessions]);
 
     const handleRevoke = async (sessionId: string) => {
         try {
             await api.post('/api/user/sessions/revoke', { sessionId });
             addLog('success', `Device signed out successfully.`);
-            fetchSessions();
+            await fetchSessions();
         } catch (error: unknown) {
             if (isAxiosError(error)) {
                 addLog('error', error.response?.data?.error || 'Failed to sign out device.');
