@@ -23,7 +23,7 @@ export const Login = () => {
     const [requires2FA, setRequires2FA] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
 
-    const handleLogin = async (e: React.FormEvent) => {
+    const handleLogin = async (e: React.SyntheticEvent<HTMLFormElement>) => {
         e.preventDefault();
         setIsLoading(true);
 

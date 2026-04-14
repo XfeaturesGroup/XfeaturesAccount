@@ -21,7 +21,7 @@ export const Register = () => {
     const [password, setPassword] = useState('');
     const [isLoading, setIsLoading] = useState(false);
 
-    const handleRegister = async (e: React.FormEvent) => {
+    const handleRegister = async (e: React.SyntheticEvent<HTMLFormElement>) => {
         e.preventDefault();
         setIsLoading(true);
 

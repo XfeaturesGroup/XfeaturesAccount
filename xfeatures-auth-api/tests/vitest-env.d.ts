@@ -3,7 +3,7 @@
 
 declare module 'cloudflare:test' {
 	import type { ExecutionContext } from '@cloudflare/workers-types';
-	import type { Env } from '../src/index';
+	import type { Env } from '@/index';
 
 	export const env: Env;
 	export function createExecutionContext(): ExecutionContext;

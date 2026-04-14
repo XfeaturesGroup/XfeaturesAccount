@@ -20,7 +20,7 @@ export const ForgotPassword = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [isSent, setIsSent] = useState(false);
 
-    const handleRequest = async (e: React.FormEvent) => {
+    const handleRequest = async (e: React.SyntheticEvent<HTMLFormElement>) => {
         e.preventDefault();
         setIsLoading(true);
         try {

@@ -1,6 +1,6 @@
 import { error, json, IRequest } from 'itty-router';
 import { Env } from '..';
-import { hashPassword, verifyPassword, generateId, generateSessionToken, hashToken } from '../crypto';
+import { hashPassword, verifyPassword, generateId, generateSessionToken, hashToken } from '@/crypto';
 import * as OTPAuth from 'otpauth';
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

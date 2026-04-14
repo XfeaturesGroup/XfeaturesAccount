@@ -22,7 +22,7 @@ export const ResetPassword = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [isLoading, setIsLoading] = useState(false);
 
-    const handleReset = async (e: React.FormEvent) => {
+    const handleReset = async (e: React.SyntheticEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (!token) {
             addLog('error', 'No reset token provided in the URL.');

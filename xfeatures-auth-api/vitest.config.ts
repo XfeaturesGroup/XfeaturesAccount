@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitest/config';
 import { cloudflareTest } from '@cloudflare/vitest-pool-workers';
+import { resolve } from 'path';
 
 export default defineConfig({
 	plugins: [
@@ -7,4 +8,9 @@ export default defineConfig({
 			wrangler: { configPath: './wrangler.toml' },
 		}),
 	],
+	resolve: {
+		alias: {
+			'@': resolve(__dirname, './src')
+		}
+	}
 });

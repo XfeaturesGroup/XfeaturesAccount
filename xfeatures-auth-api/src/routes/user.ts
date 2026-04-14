@@ -1,8 +1,8 @@
 import { error, json } from 'itty-router';
 import { Env } from '..';
-import { verifyPassword } from '../crypto';
+import { verifyPassword } from '@/crypto';
 import * as OTPAuth from 'otpauth';
-import { AuthenticatedRequest } from '../middleware/session';
+import { AuthenticatedRequest } from '@/middleware/session';
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const USERNAME_REGEX = /^[a-zA-Z0-9_]{3,20}$/;

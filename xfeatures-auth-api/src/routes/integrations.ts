@@ -1,6 +1,6 @@
 import { json } from 'itty-router';
 import { Env } from '..';
-import { AuthenticatedRequest } from '../middleware/session';
+import { AuthenticatedRequest } from '@/middleware/session';
 
 export const getIntegrationsHandler = async (request: AuthenticatedRequest, env: Env) => {
 	const integrations = await env.DB.prepare(

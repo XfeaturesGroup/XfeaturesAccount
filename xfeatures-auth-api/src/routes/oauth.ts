@@ -1,9 +1,11 @@
 import { IRequest } from 'itty-router';
 import { Env } from '..';
-import { hashToken } from '../crypto';
+import { hashToken } from '@/crypto';
+
+const getCookieHeader = (request: Request | IRequest) => request.headers.get('Cookie');
 
 const getUserIdFromCookie = async (request: Request, env: Env) => {
-	const cookieHeader = request.headers.get('Cookie');
+	const cookieHeader = getCookieHeader(request);
 	const sessionIdMatch = cookieHeader?.match(/session_id=([^;]+)/);
 	const sessionId = sessionIdMatch ? sessionIdMatch[1] : null;
 
@@ -39,7 +41,7 @@ export const githubCallbackHandler = async (request: IRequest, env: Env) => {
 	const state = url.searchParams.get('state');
 	const frontendUrl = env.FRONTEND_URL || 'https://account.xfeatures.net';
 
-	const cookieHeader = request.headers.get('Cookie');
+	const cookieHeader = getCookieHeader(request as any);
 	const stateMatch = cookieHeader?.match(/oauth_state=([^;]+)/);
 	const cookieState = stateMatch ? stateMatch[1] : null;
 
@@ -125,7 +127,7 @@ export const discordCallbackHandler = async (request: IRequest, env: Env) => {
 	const frontendUrl = env.FRONTEND_URL || 'https://account.xfeatures.net';
 	const redirectUri = `${url.origin}/api/oauth/discord/callback`;
 
-	const cookieHeader = request.headers.get('Cookie');
+	const cookieHeader = getCookieHeader(request as any);
 	const stateMatch = cookieHeader?.match(/oauth_state=([^;]+)/);
 	const cookieState = stateMatch ? stateMatch[1] : null;
 
