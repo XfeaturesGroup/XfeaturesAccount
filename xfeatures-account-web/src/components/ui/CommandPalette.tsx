@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type Dispatch, type SetStateAction } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { useStore } from '../../store/useStore';
@@ -10,7 +10,8 @@ type TabType = 'profile' | 'security' | 'sessions' | 'integrations';
 
 interface CommandPaletteProps {
     isOpen: boolean;
-    setIsOpen: (val: boolean | ((prev: boolean) => boolean)) => void;
+    setIsOpen: Dispatch<SetStateAction<boolean>>;
+    // eslint-disable-next-line no-unused-vars
     setActiveTab: (tab: TabType) => void;
 }
 
@@ -47,11 +48,17 @@ export const CommandPalette = ({ isOpen, setIsOpen, setActiveTab }: CommandPalet
 
     useEffect(() => {
         if (isOpen) {
-            setSearch('');
-            setActiveIndex(0);
-            setTimeout(() => inputRef.current?.focus(), 50);
+            if (search !== '' || activeIndex !== 0 || document.activeElement !== inputRef.current) {
+                const id = window.setTimeout(() => {
+                    setSearch('');
+                    setActiveIndex(0);
+                    inputRef.current?.focus();
+                }, 50);
+
+                return () => clearTimeout(id);
+            }
         }
-    }, [isOpen]);
+    }, [isOpen, search, activeIndex]);
 
     const handleLogout = async () => {
         setIsOpen(false);

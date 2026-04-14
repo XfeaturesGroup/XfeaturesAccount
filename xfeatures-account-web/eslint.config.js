@@ -23,6 +23,8 @@ export default [
       ...tseslint.configs.recommended[0].rules,
       ...reactHooks.configs.recommended.rules,
       'react-refresh/only-export-components': 'warn',
+      'react/react-in-jsx-scope': 'off',
+      'react/jsx-uses-react': 'off',
     },
   },
 ]

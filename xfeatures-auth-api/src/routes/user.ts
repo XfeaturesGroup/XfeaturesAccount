@@ -1,4 +1,4 @@
-import { error, json, IRequest } from 'itty-router';
+import { error, json } from 'itty-router';
 import { Env } from '../index';
 import { verifyPassword } from '../crypto';
 import * as OTPAuth from 'otpauth';
@@ -128,8 +128,17 @@ export const uploadAvatarHandler = async (request: AuthenticatedRequest, env: En
 		const formData = await request.formData().catch(() => null);
 		if (!formData) return error(400, { error: 'Invalid form data' });
 
-		const file = formData.get('avatar') as File;
-		if (!file || !(file instanceof File) || file.size > 5 * 1024 * 1024) {
+		const entry = formData.get('avatar');
+		const isFileLike = (v: any): v is File => (
+			v !== null && typeof (v as any).arrayBuffer === 'function'
+		);
+
+		if (!isFileLike(entry)) {
+			return error(400, { error: 'Invalid file or file exceeds 5MB limit' });
+		}
+
+		const file = entry;
+		if (file.size > 5 * 1024 * 1024) {
 			return error(400, { error: 'Invalid file or file exceeds 5MB limit' });
 		}
 

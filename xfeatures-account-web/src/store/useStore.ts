@@ -25,8 +25,9 @@ interface AppState {
     isAuthenticated: boolean;
     isInitializing: boolean;
     logs: SystemLog[];
-
+    // eslint-disable-next-line no-unused-vars
     setUser: (user: User | null) => void;
+    // eslint-disable-next-line no-unused-vars
     addLog: (type: SystemLog['type'], message: string) => void;
     clearLogs: () => void;
 }

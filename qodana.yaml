@@ -9,3 +9,8 @@ profile:
   name: qodana.recommended
 include:
   - name: CheckDependencyLicenses
+exclude:
+  - name: All
+    paths:
+      - .cloudflare
+      - xfeatures-auth-api/worker-configuration.d.ts

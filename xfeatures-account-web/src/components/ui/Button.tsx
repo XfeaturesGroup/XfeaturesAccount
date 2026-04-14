@@ -1,4 +1,4 @@
-import { forwardRef, useState, useRef, useEffect } from 'react';
+import React, { forwardRef, useState, useRef, useEffect, useCallback } from 'react';
 import { motion, type HTMLMotionProps } from 'framer-motion';
 import { cn } from '../../lib/utils';
 
@@ -29,18 +29,18 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             }, holdTimeMs);
         };
 
-        const cancelHold = () => {
+        const cancelHold = useCallback(() => {
             if (variant !== 'hold') return;
             setIsHolding(false);
             if (holdTimeout.current) {
                 clearTimeout(holdTimeout.current);
                 holdTimeout.current = null;
             }
-        };
+        }, [variant]);
 
         useEffect(() => {
             return () => cancelHold();
-        }, []);
+        }, [cancelHold]);
 
         const variants = {
             primary: cn(
